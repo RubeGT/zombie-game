@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Zombie Gaem - Top Down Zombie Survival Shooter">
+    <title>Zombie Gaem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Crosshair -->
+    <div id="crosshair" class="hidden"></div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer">
+        <!-- Top Stats Bar -->
+        <div id="stats">
+            <div class="stat">
+                <span class="stat-label">WAVE</span>
+                <span id="wave-stat" class="stat-value">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">KILLS</span>
+                <span id="kills-stat" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">MONEY</span>
+                <span id="money-stat" class="stat-value">$0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">HEALTH</span>
+                <span id="health-stat" class="stat-value">100/100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">LEVEL</span>
+                <span id="level-stat" class="stat-value">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">XP</span>
+                <span id="xp-stat" class="stat-value">0/100</span>
+            </div>
+        </div>
+
+        <!-- Health Bar -->
+        <div id="health-bar-container">
+            <div id="health-bar"></div>
+        </div>
+
+        <!-- XP Bar -->
+        <div id="xp-bar-container">
+            <div id="xp-bar"></div>
+        </div>
+
+        <!-- Level Display -->
+        <div id="level-display">LVL 1</div>
+
+        <!-- Power-up Indicators -->
+        <div id="power-up-indicator"></div>
+
+        <!-- Kill Feed -->
+        <div id="kill-feed"></div>
+
+        <!-- Wave Announcement -->
+        <div id="wave-announcement" class="hidden">WAVE 1</div>
+
+        <!-- Weapon/Ammo Info -->
+        <div id="weapon-info">
+            <span id="weapon-name">PISTOL</span>
+            <span id="ammo-display"><span id="current-ammo">30</span> / <span id="max-ammo">90</span></span>
+        </div>
+    </div>
+
+    <!-- SHOP -->
+    <div id="shop">
+        <div id="shop-handle"></div>
+        <div id="shop-panel">
+            <div class="shop-header">
+                <h2>SHOP</h2>
+                <div class="shop-money">MONEY: <span id="money-display">0</span></div>
+            </div>
+            <div class="shop-streak" id="streak-display" style="display: none;">
+                STREAK: <span id="streak-multiplier">1.0</span>x
+            </div>
+            <div class="shop-tabs">
+                <button class="shop-tab active" data-tab="weapons">WEAPONS</button>
+                <button class="shop-tab" data-tab="upgrades">UPGRADES</button>
+                <button class="shop-tab" data-tab="consumables">CONSUMABLES</button>
+            </div>
+            <div class="shop-content">
+                <div id="weapon-items" class="shop-panel-content active"></div>
+                <div id="upgrade-items" class="shop-panel-content"></div>
+                <div id="consumable-items" class="shop-panel-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over" class="hidden">
+        <h1>GAME OVER</h1>
+        <p>Waves Survived: <span id="final-wave">0</span></p>
+        <p>Total Kills: <span id="final-kills">0</span></p>
+        <p>Money Earned: <span id="final-money">$0</span></p>
+        <p>Highest Streak: <span id="final-streak">0</span></p>
+        <button id="restart-btn">PLAY AGAIN</button>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
