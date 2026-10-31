@@ -902,11 +902,3 @@ class PickupEffect {
     return this.life <= 0;
   }
 }
-
-function choose(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
